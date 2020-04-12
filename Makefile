@@ -1,8 +1,11 @@
 CC=gcc
 CFLAGS=-g
 
-mykernel : cpu.o interpreter.o kernel.o pcb.o ram.o shell.o shellmemory.o
+mykernel : boot.o cpu.o interpreter.o kernel.o pcb.o ram.o shell.o shellmemory.o
 	$(CC) $(CFLAGS) -o mykernel *.o
+
+boot.o : boot.c 
+	$(CC) -c $(CFLAGS) boot.c
 
 cpu.o : cpu.c 
 	$(CC) -c $(CFLAGS) cpu.c
