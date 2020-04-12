@@ -13,7 +13,7 @@ void clear_BackingStore(){
     directFind = opendir("BackingStore");
     if (directFind)
     {   
-        remove("BackingStore/rem.txt"); //delete that file
+        //remove("BackingStore/copy.txt"); //delete that file
         closedir(directFind);
         rmdir("BackingStore");
         mkdir("BackingStore", S_IRWXU); //S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH
@@ -32,7 +32,9 @@ int main(int argc, char const *argv[])
     
    int error=0;
    boot();  
-   
-   //error = kernel();  
+   error = kernel();
+
+   //Program Termination
+   remove("BackingStore/copy.txt");   //deletes copied_file
    return error;
 }
