@@ -1,0 +1,3 @@
+setVariable --> addRecord
+getValue --> fetchValue
+findVariable --> searchVariable
