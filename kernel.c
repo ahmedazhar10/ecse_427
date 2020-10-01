@@ -15,9 +15,9 @@ ReadyQueueNode* head = NULL;
 ReadyQueueNode* tail = NULL;
 int sizeOfQueue = 0;
 
-int kernel()
+int main(int argc, char const *argv[])
 {
-   return shellUI();
+    shellUI();
 }
 
 /*

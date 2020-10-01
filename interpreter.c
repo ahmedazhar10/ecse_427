@@ -66,7 +66,6 @@ int exec(char * words[]){
     for (int i = 1; i <= 3; i++)
     {
         if ( strcmp(words[i],"_NONE_") != 0 ) {
-            /* REMOVE Duplication check
             int duplicate = FALSE;
             for (int j = 0; j<i-1; j++){
                 if ( strcmp(filename[j],words[i]) == 0 ) {
@@ -74,10 +73,9 @@ int exec(char * words[]){
                     break;
                 }
             }
-            */
-            //if (duplicate){
-            //    displayCode(-6,words[i]);
-            //} else {
+            if (duplicate){
+                displayCode(-6,words[i]);
+            } else {
                 filename[nextFree] = strdup(words[i]);
                 nextFree++;
                 errorCode = myinit(words[i]);
@@ -87,7 +85,7 @@ int exec(char * words[]){
                     emptyReadyQueue();
                     return 0;
                 }
-            //}
+            }
         // Looped through all files
         } else {
             break;

@@ -2,7 +2,7 @@
 #define KERNEL_H
 #include "pcb.h"
 
-int kernel();
+
 void addToReady(struct PCB*);
 int size();
 struct PCB* pop();
